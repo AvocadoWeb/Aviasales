@@ -1,0 +1,118 @@
+/*.card {
+  width: 502px;
+  height: 184px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #dfe5ec;
+
+  &__header {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    &__price {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 24px;
+      color: #2196f3;
+    }
+  }
+
+  &__content {
+    margin: 20px;
+
+    &__info {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: 'way time transfer';
+      width: 462px;
+      height: 39px;
+      margin-bottom: 10px;
+
+      .way {
+        grid-area: way;
+      }
+
+      .time {
+        grid-area: time;
+      }
+
+      .transfer {
+        grid-area: transfer;
+      }
+
+      &__way__title {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: uppercase;
+        color: #a0b0b9;
+      }
+    }
+  }
+}*/
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  background: #ffffff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 500px;
+  height: 184px;
+
+  &__header {
+    display: flex;
+    padding: 20px;
+
+    &__price {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 24px;
+      color: #2196f3;
+    }
+
+    &__logo {
+      margin-left: auto;
+      height: 36px;
+    }
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 5px 20px;
+
+    &__way {
+      display: flex;
+      flex-direction: column;
+      width: 33%;
+      align-items: flex-start;
+
+      &__text {
+        color: #a0b0b9;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: uppercase;
+      }
+
+      &__data {
+        color: #4a4a4a;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+  }
+}
