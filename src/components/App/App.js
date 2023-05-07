@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import * as actions from '../../actions'
+import { fetchSearchId, loadingTickets } from '../../api/api'
 import Header from '../Header/Header'
 import Filters from '../Filters/Filters'
 import TicketList from '../TicketList/TicketList'
@@ -38,4 +38,9 @@ function App({ searchId, fetchSearchId, loadingTickets, loading }) {
 
 const mapStateToProps = ({ searchId, loading }) => ({ searchId, loading })
 
-export default connect(mapStateToProps, actions)(App)
+const mapDispatchProps = (dispatch) => ({
+  fetchSearchId: (searchId) => dispatch(fetchSearchId(searchId)),
+  loadingTickets: (tickets) => dispatch(loadingTickets(tickets)),
+})
+
+export default connect(mapStateToProps, mapDispatchProps)(App)

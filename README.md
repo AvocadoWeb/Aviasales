@@ -1,2 +1,2 @@
 # Aviasales
-[aviasales-one-delta.vercel.app](https://aviasales-one-delta.vercel.app/)
+[aviasales-avocadoweb.vercel.app](https://aviasales-avocadoweb.vercel.app/)

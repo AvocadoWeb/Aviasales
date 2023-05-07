@@ -1,20 +1,11 @@
-import { FILTER, SORT, ERROR, SHOW_MORE, SEARCH_ID, TICKETS_LOADED } from '../src/types'
+import { SEARCH_ID, TICKETS_LOADED } from '../types'
+import { onError } from '../actions'
 
-export const setFilter = (filter) => ({ type: FILTER, filter })
+const _baseUrl = 'https://aviasales-test-api.kata.academy'
 
-export const setSort = (sort) => ({ type: SORT, sort })
-
-export const setSearchId = (searchId) => ({ type: SEARCH_ID, searchId })
-
-export const setLoadedTickets = (tickets, loading) => ({ type: TICKETS_LOADED, tickets, loading })
-
-export const onError = (error) => ({ type: ERROR, error })
-
-export const showMore = () => ({ type: SHOW_MORE })
-/*
 export function fetchSearchId() {
   return (dispatch) => {
-    fetch('https://aviasales-test-api.kata.academy/search')
+    fetch(`${_baseUrl}/search`)
       .then((response) => response.json())
       .then((response) => {
         dispatch({
@@ -53,4 +44,4 @@ export function loadingTickets(searchId) {
 
     subscribe()
   }
-}*/
+}

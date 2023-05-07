@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
 import { useCallback } from 'react'
-import uniqid from 'uniqid'
 
 import TicketCard from '../TicketCard/TicketCard'
 import * as actions from '../../actions'
+import { cheapest, fastest, optimal } from '../../types'
 
 import classes from './TicketList.module.scss'
 
@@ -28,13 +28,13 @@ function TicketList({ tickets, showMoreCount, sort, filter, showMore }) {
 
   const sortingTickets = (arr, sort) => {
     switch (sort) {
-      case 'cheapest':
+      case cheapest:
         return arr.sort((a, b) => (a.price > b.price ? 1 : -1))
-      case 'fastest':
+      case fastest:
         return arr.sort((a, b) =>
           a.segments[0].duration + a.segments[1].duration > b.segments[0].duration + b.segments[1].duration ? 1 : -1
         )
-      case 'optimal':
+      case optimal:
         return arr.sort((a, b) =>
           a.segments[0].duration + a.segments[1].duration + a.price >
           b.segments[0].duration + b.segments[1].duration + b.price
@@ -51,8 +51,8 @@ function TicketList({ tickets, showMoreCount, sort, filter, showMore }) {
   return (
     <>
       <ul className={classes.ticketlist}>
-        {viewTickets.map((ticket) => (
-          <li key={uniqid()}>
+        {viewTickets.map((ticket, index) => (
+          <li key={index}>
             <TicketCard ticket={ticket} />
           </li>
         ))}
